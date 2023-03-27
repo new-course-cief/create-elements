@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let newPTag = document.createElement("p")
+        let newText = document.createTextNode("This is a new text")
+        let secondText = document.createTextNode("This is a second text node")
+        let nextLine = document.createElement("br")
+
+        newPTag.appendChild(newText)
+        newPTag.appendChild(nextLine)
+        newPTag.appendChild(secondText)
+
+        document.body.appendChild(newPTag)
+        console.log(document.body)
+    </script>
+</body>
+</html>
