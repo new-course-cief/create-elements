@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h1>5 seconds and the text below is gone</h1>
+    <p id="counter"></p>
+    <p id="victim">Gone after count</p>
+    <script>
+       /* declarar variables para obtener los identificadores del contador y la etiqueta p para mostrarlo */
+        let text = document.getElementById("victim")
+        let counter = document.getElementById("counter")
+
+        /* declare a variable to initiate a count with 5 */
+        let count = 5
+
+        /* coloque la función setInterval en una variable (intervalID) y reduzca el conteo en 1 después de cada segundo. Además, escríbalo con innerHTML*/
+        let intervalID =  setInterval(() => {
+            count --;
+            counter.innerHTML = count
+            console.log(counter)
+
+            /* dejar de contar si es 0 para que no tenga que mostrar valores negativos */
+            if(counter.innerHTML === 0 || counter.innerHTML < 1){
+            text.style.display = "none"
+            clearInterval(intervalID)
+            count == 0
+           }
+           
+        }, 1000);
+        
+
+    </script>
+</body>
+</html>
