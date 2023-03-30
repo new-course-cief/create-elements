@@ -11,11 +11,11 @@
     <title>Lista de compras</title>
 </head>
 <body>
-    <h1>Lista de compras</h1>
+    <h1>Shopping List</h1>
     
     <div class="container">
         <select name="" id="select-day">
-            <option value="">select day</option>
+            <option value="choose a day">select day</option>
             <option value="Monday">Monday</option>
             <option value="Tuesday">Tuesday</option>
             <option value="Wednessday">Wednessday</option>
@@ -25,7 +25,7 @@
             <option value="Sunday">Sunday</option>
          </select>
         <p class="day" id = "selected-day">Thursday</p>
-        <div>
+        <div class="li-and-button-container">
             <input type="text" id="input" placeholder="add item">
             <button id="add-button" >add</button>
         </div>
@@ -63,19 +63,18 @@
                 listContainer.appendChild(remover)
                 remover.innerHTML = "X"
                 remover.setAttribute('id', 'remove-button');
-                remover.classList.add("remove-button")
                 
                 
-                let removeButtons = document.querySelectorAll(".remove-button")
+                let removeButtons = document.querySelectorAll("#remove-button")
                 console.log(removeButtons)
                 removeButtons.forEach(function(removeButton){
                     removeButton.addEventListener("click", function(){
-                        let listItem = removeButton.parentNode.querySelector('li');
+                        removeButton.parentElement.remove()
+                        /* let listItem = removeButton.parentNode.querySelector('li');*/
                         /* removeButton.parentNode.querySelector('li:nth-child(3)'); */
-                        console.log(removeButton.parentNode)
+                        /* console.log(removeButton.parentNode)
                         listItem.remove()
-                        removeButton.remove()
-                        console.log("wodnnhjhj")
+                        removeButton.remove() */
                     })
                 
                 });
